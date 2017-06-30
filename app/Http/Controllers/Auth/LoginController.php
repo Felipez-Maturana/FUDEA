@@ -4,7 +4,7 @@ namespace adminFudea\Http\Controllers\Auth;
 
 use adminFudea\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     /*
@@ -40,6 +40,22 @@ class LoginController extends Controller
     public function showRegistrationForm()
     {
         return redirect('login');
+    }
+
+    // public function authenticate()
+    // {
+    //     if (Auth::attempt(['email' => $email, 'password' => $password])) {
+    //         // Authentication passed...
+    //         return Redirect::to('/home2');
+    //     }
+    // }
+
+    protected function credentials(Request $request)
+    {
+        $credentials = $request->only($this->username(), 'password');
+        $credentials['bloqueado']= 0;
+
+        return $credentials;
     }
     
 }

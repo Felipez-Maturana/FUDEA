@@ -86,7 +86,7 @@ class SocioController extends Controller
     	$socio->apellidoPaterno=$request->get('apellidoPaterno');
     	$socio->apellidoMaterno=$request->get('apellidoMaterno');
 		$socio->idModalidadPago=$request->get('idModalidadPago');
-		$socio->idUser=$request->get('idUser');
+		// $socio->idUser=$request->get('idUser');
 		$socio->egreso=$request->get('egreso');
 		$socio->estadoSuscripcion=$request->get('estadoSuscripcion');
 		$socio->vencimientoSuscripcion=$request->get('vencimientoSuscripcion');

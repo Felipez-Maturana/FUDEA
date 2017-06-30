@@ -122,6 +122,9 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header"></li>
+            
+
+
             <?php if(auth::user()->tipo_usuario ==0): ?>
             <li class="treeview">
               <a href="#">
@@ -163,17 +166,8 @@
                 <li><a href="#"><i class="fa fa-circle-o"></i>Agregar</a></li>
               </ul>
             </li> -->        
-            <?php if(auth::user()->tipo_usuario ==0): ?>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-folder"></i> <span>Empresas</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="/admin/socio/buscarsocio"><i class="fa fa-circle-o"></i> Consultar por socio</a></li>
-              </ul>
-            </li>
-            <?php elseif (auth::user()->tipo_usuario==1):?>
+            
+
               <?php if (auth::user()->tipo_usuario==0):?>
               <li class="treeview">
               <a href="#">
@@ -193,6 +187,7 @@
                 <small class="label pull-right bg-red">PDF</small>
               </a>
             </li>
+            
             <li>
               <a href="https://github.com/Felipez-Maturana/FUDEA">
                 <i class="fa fa-info-circle"></i> <span>Acerca De...</span>

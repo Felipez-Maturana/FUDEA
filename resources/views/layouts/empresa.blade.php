@@ -98,52 +98,12 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header"></li>
-            
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>Administración</span>
-                <i class="fa fa-angle-left pull-right"></i>
+          
+            <li>
+              <a href="/empresa/index">
+                <i class="fa fa-th"></i> <span>Consultar Por socio</span>
+                <small class="label pull-right bg-green">Nuevo</small>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Socios</a></li> -->
-              </ul>
-            </li>
-            
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-th"></i>
-                <span>Egresados y Amigos</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Administrar</a></li>
-                <li><a href="/admin/socio/informes"><i class="fa fa-circle-o"></i> Reportes</a></li>
-                <li><a href="/admin/socio/buscarsocio"><i class="fa fa-circle-o"></i> Consultar por socio</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-shopping-cart"></i>
-                <span>Métodos de Pago</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i>Agregar</a></li>
- <!--                <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i>Clientes</a></li> -->
-              </ul>
-            </li>
-                       
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-folder"></i> <span>Carreras</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i>Agregar</a></li>
-                
-              </ul>
             </li>
              <li>
               <a href="#">
