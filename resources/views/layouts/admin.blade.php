@@ -38,14 +38,6 @@
   margin:10px;
 }
 </style>
-    <script src="{{asset('js/bootstrap-datepicker.js')}}"></script>
-
-    <script>
-      $(function(){
-        $('.datepicker').datepicker();
-      });
-    </script>
-
 
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
@@ -139,23 +131,34 @@
             </li>
             <?php endif; ?>
             
+
+
+
+            <?php if(auth::user()->tipo_usuario ==0): ?>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-th"></i>
                 <span>Egresados y Amigos</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <?php if(auth::user()->tipo_usuario ==0): ?>
               <ul class="treeview-menu">
                 <li><a href="/admin/socio"><i class="fa fa-circle-o"></i>Socios</a></li>
               </ul>
-              <?php elseif(auth::user()->tipo_usuario ==1): ?>
+            </li>
+            <?php endif; ?>  
+
+              <?php if(auth::user()->tipo_usuario ==1): ?>
+                <li class="treeview">
+              <a href="#">
+                <i class="fa fa-th"></i>
+                <span>Egresados y Amigos</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
               <ul class="treeview-menu">
                 <li><a href="/ejecutivo"><i class="fa fa-circle-o"></i>Socios</a></li>
               </ul>
-              <?php endif; ?>  
             </li>
-
+            <?php endif; ?>  
            <!--  <li class="treeview">
               <a href="#">
                 <i class="fa fa-shopping-cart"></i>
@@ -175,12 +178,19 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/empresa/index"><i class="fa fa-circle-o"></i> Consultar por socio</a></li>
+                <li><a href="/admin/socio/buscarsocio"><i class="fa fa-circle-o"></i> Consultar por socio</a></li>
               </ul>
             </li>
-              <?php endif; ?>
             <?php endif; ?>
-
+            
+            <?php if(auth::user()->tipo_usuario==2): ?>
+            <li>
+              <a href="/empresa/index">
+                <i class="fa fa-th"></i> <span>Consultar Por socio</span>
+                <small class="label pull-right bg-green">Nuevo</small>
+              </a>
+            </li>
+            <?php endif; ?>
              <li>
               <a href="#">
                 <i class="fa fa-plus-square"></i> <span>Ayuda</span>
@@ -194,6 +204,7 @@
                 <small class="label pull-right bg-yellow">WEB FOUNDATION</small>
               </a>
             </li>
+
                         
           </ul>
         </section>

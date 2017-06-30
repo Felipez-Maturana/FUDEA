@@ -1,4 +1,4 @@
-@extends('layouts.empresa')
+@extends('layouts.admin')
 @section('contenido')
 	<h3>Ingresar RUN Socio</h3>
 
