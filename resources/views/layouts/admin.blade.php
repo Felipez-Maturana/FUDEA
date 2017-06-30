@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{asset('css/_all-skins.min.css')}}">
     <link rel="apple-touch-icon" href="{{asset('img/apple-touch-icon.png')}}">
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
-
+<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 
 <style>
   <style>
@@ -130,7 +130,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i>Administrar Usuarios</a></li>
+                <li><a href="/admin/usuarios"><i class="fa fa-circle-o"></i>Administrar Usuarios</a></li>
                 <li><a href="/admin/socio/informes"><i class="fa fa-circle-o"></i> Reportes</a></li>
               </ul>
             </li>

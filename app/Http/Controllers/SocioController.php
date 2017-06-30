@@ -124,7 +124,12 @@ class SocioController extends Controller
             -> where('estadoSuscripcion','=','1')
             -> get();
 
-            return view('admin.socio.informes',["carrera"=>$carrera,"estado"=>$estado,"total"=>$total]);
+            $sexo = DB::table('socios')
+            -> select(DB::raw('COUNT(*) as num'))
+            -> where('sexo','=','0')
+            -> get();
+
+            return view('admin.socio.informes',["carrera"=>$carrera,"estado"=>$estado,"total"=>$total,"sexo"=>$sexo]);
     }
 
     public function buscarsocio(Request $request)

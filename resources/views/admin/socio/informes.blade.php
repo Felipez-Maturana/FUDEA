@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('contenido')
 
-	<div class="form-group">
+<!-- 	<div class="form-group">
 	      <label class="col-xs-2 control-label">Carrera</label>
 	      <div class="col-xs-7 selectContainer">
 	          <select class="form-control" name="color">
@@ -52,7 +52,7 @@
 	          <button type="submit" class="btn btn-primary">Informes por Estado de Suscripción</button>
 	      </div>
 	  </div>
-	 </div>
+	 </div> -->
 
 
 	          
@@ -67,6 +67,11 @@
 <div class="row">
 	<div class="col-md-12 col-lg-12 col-xs-12">
  		<div id="piechartEstado"></div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12 col-lg-12 col-xs-12">
+ 		<div id="piechartSexo"></div>
 	</div>
 </div>
 
@@ -110,7 +115,7 @@
 
         var data = google.visualization.arrayToDataTable([
         ['Socios Activos', 'Socios Inactivos'],
-       	['Acticos', {{$estado[0]->num}}],
+       	['Activos', {{$estado[0]->num}}],
        	['Inactivos',{{$total[0]->num-$estado[0]->num}}]         
         ]);
 
@@ -124,3 +129,30 @@
         chart.draw(data, options);
       }
     </script>
+
+    </script>
+
+    	<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Hombres', 'Mujeres'],
+       	['Hombres', {{$sexo[0]->num}}],
+       	['Mujeres',{{$total[0]->num-$sexo[0]->num}}]         
+        ]);
+
+        var options = {
+          title: 'Según Sexo',
+          is3D:true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechartSexo'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    </script>
+
