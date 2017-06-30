@@ -155,8 +155,27 @@ class SocioController extends Controller
         return view('admin.usuarios.index',["socios"=>$socios]);
     }
 
-    public function eliminarUsuario()
+    public function bloquearUsuario($id)
     {
+        $estado = DB::table('users')
+        ->where('id',$id)
+        ->select('bloqueado')
+        ->get();
+
+        if($estado[0]->bloqueado==0)
+        {
+            $socios=DB::table('users')
+            ->where('id',$id)
+            ->update(['bloqueado'=> 1]);
+            return Redirect::to('/admin/usuarios');      
+        }
+        else
+        {
+            $socios=DB::table('users')
+            ->where('id',$id)
+            ->update(['bloqueado'=> 0]);
+            return Redirect::to('/admin/usuarios'); 
+        }
 
     }
 

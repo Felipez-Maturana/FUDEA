@@ -21,7 +21,7 @@
 
 
 						<th>Email</th>
-
+						<th>Estado</th>
 					</thead>
 					@foreach ($socios as $soc)
 					<tr>
@@ -41,8 +41,29 @@
 							{{$soc->email}}
 						</td>
 						
+						
+
+						<td>    
+						<?php if($soc->bloqueado==0): ?>
+							<b style="color:green">Habilitado</b>  
+						<?php elseif($soc->bloqueado==1): ?> 
+							<b style="color:red; ">Bloqueado</b>
+						<?php endif; ?>
+					  	</td>
+						
+
+						<td>
+							
+							<!-- <td><a href="{{URL::action('SocioController@bloquearUsuario',$soc->id)}}"><button class="btn btn-danger">Bloquear</button></a></td> -->
+							<td><a href="" data-target="#modal-delete-{{$soc->id}}" data-toggle="modal"><button class="btn btn-info">Cambiar estado</button></a></td>
+						</td>
+
+						
+
+
 					</tr>
 					
+					@include('admin.usuarios.modal')
 					@endforeach
 				</table>
 			</div>

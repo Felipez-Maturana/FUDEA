@@ -26,6 +26,9 @@ Route::group(['middleware' => 'checkAdministrador'], function() {
 	Route::get('admin/socio/buscarsocio', 'SocioController@buscarsocio');
 	Route::get('admin/socio/informes', 'SocioController@informes');
 	Route::get('admin/usuarios/', 'SocioController@verUsuarios');
+	
+	Route::get('admin/usuarios/{id}', 'SocioController@bloquearUsuario');
+
 
 	Route::post('admin/socio/informes','SocioController@actualizarEstado');
 	Route::resource('admin/socio','SocioController');
